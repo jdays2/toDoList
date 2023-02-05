@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.logo,
+.avatar {
+  height: 60px;
+  padding: 10px;
+}
+
+.avatar {
+  border-radius: 45px;
+  border: 1px solid rgb(248, 192, 192);
+}
+
+.profileName {
+  font-size: 28px;
+  color: blueviolet;
+}

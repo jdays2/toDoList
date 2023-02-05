@@ -1,0 +1,32 @@
+.task {
+  width: 280px;
+  height: 60px;
+  background: #fff2ae;
+  border-radius: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.taskName {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #000000;
+
+  margin-left: 17px;
+}
+
+.misterySquare {
+  width: 15px;
+  height: 15px;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    #ffffff;
+  border-radius: 2px;
+
+  margin-left: 14px;
+}
