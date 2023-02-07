@@ -1,10 +1,16 @@
 .App {
-  width: 1900px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+
+  background: rgb(84, 85, 85);
+  background: linear-gradient(
+    90deg,
+    rgba(84, 85, 85, 1) 0%,
+    rgba(51, 68, 76, 1) 49%,
+    rgba(12, 49, 65, 1) 100%
+  );
 }
 
 .App-logo {
@@ -35,7 +41,6 @@
 
 .content__wrapper {
   width: 1500px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);

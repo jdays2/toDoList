@@ -1,27 +1,25 @@
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
+  justify-content: center;
   margin: 20px;
 }
 
-.profile {
-  display: flex;
-  align-items: center;
+h1 {
+  font-family: "Archivo", sans-serif;
+  color: #ffdfdb;
+  font-size: 70px;
+  font-weight: 100;
 }
 
-.logo,
-.avatar {
-  height: 60px;
-  padding: 10px;
+/*.blink {
+  animation: blink 1.5s infinite; 
 }
-
-.avatar {
-  border-radius: 45px;
-  border: 1px solid rgb(248, 192, 192);
-}
-
-.profileName {
-  font-size: 28px;
-  color: blueviolet;
-}
+@keyframes blink {
+  from {
+    opacity: 1; 
+  }
+  to {
+    opacity: 0; 
+  }
+}*/
