@@ -9,6 +9,8 @@ import ItemForm from "../Form/ItemForm/ItemForm";
 
 function TaskList({ items, title, id }) {
   const dispatch = useDispatch();
+
+  console.log(id);
   return (
     <div className={styles.list__wrapper}>
       <div className={styles.item}>
@@ -24,7 +26,7 @@ function TaskList({ items, title, id }) {
               <Task value={e.value} key={i} id={i} idList={id} done={e.done} />
             );
           })}
-        <ItemForm id={id} />
+        <ItemForm idList={id} />
       </div>
     </div>
   );

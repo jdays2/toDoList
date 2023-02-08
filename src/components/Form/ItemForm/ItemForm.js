@@ -8,7 +8,7 @@ import {
 import { IoCreateOutline } from "react-icons/io5";
 import { CiCircleRemove } from "react-icons/ci";
 
-function ItemForm({ id }) {
+function ItemForm({ idList }) {
   const dispatch = useDispatch();
 
   const titleValue = useSelector(
@@ -17,8 +17,8 @@ function ItemForm({ id }) {
 
   const isCreated = useSelector((state) => state.form.tasks.isCreated);
 
-  const onHandler = (event) =>
-    dispatch(setCurrentFormItemValue(event.target.value));
+  const onHandler = (event, idList) =>
+    dispatch(setCurrentFormItemValue({ value: event.target.value, idList }));
 
   return (
     <div className={!isCreated ? styles.root : styles.hidden}>
@@ -43,8 +43,8 @@ function ItemForm({ id }) {
             <IoCreateOutline
               className={styles.buttonTwo}
               onClick={(event) => {
-                dispatch(createNewItem(id));
                 event.preventDefault();
+                dispatch(createNewItem());
               }}
             ></IoCreateOutline>
           </button>

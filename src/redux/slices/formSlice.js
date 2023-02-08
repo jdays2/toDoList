@@ -82,12 +82,18 @@ export const formSlice = createSlice({
         draft.isCreated = true;
       });
     },
-    createNewItem(state, active) {
-      console.log(current(state));
-    },
-    getForm(state) {
+    createNewItem(state, action) {
       return produce(state, (draft) => {
-        draft.isCreated = false;
+        const newItem = draft.tasks[action.payload.idList].currentFormItemValue;
+        draft.tasks[action.payload.idList].items.push({
+          value: newItem,
+          done: false,
+        });
+      });
+    },
+    getForm(state, action) {
+      return produce(state, (draft) => {
+        draft.isCreated = action.payload;
       });
     },
     deleteSomeTasks(state, action) {

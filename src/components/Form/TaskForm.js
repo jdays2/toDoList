@@ -16,8 +16,6 @@ function TaskForm() {
   const onHandler = (event) =>
     dispatch(setCurrentFormTitleValue(event.target.value));
 
-  console.log(useSelector((state) => state.form));
-
   return (
     <div className={!isCreated ? styles.root : styles.hidden}>
       <form className={styles.form}>
@@ -26,7 +24,7 @@ function TaskForm() {
             className={styles.button}
             onClick={(event) => {
               event.preventDefault();
-              dispatch(getForm());
+              dispatch(getForm(true));
             }}
           ></IoArrowUndoOutline>
         </button>

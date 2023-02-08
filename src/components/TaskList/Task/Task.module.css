@@ -49,8 +49,8 @@
 }
 
 .misterySquare:hover {
-  -webkit-transform: rotate(720deg);
-  transform: rotate(720deg);
+  transition: 1s;
+  color: #394900ce;
 }
 
 .deleteElement {
