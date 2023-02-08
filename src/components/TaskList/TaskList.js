@@ -20,9 +20,11 @@ function TaskList({ items, title, id }) {
         <p className={styles.title}>{title}</p>
         {items &&
           items.map((e, i) => {
-            return <Task value={e.value} key={i} id={e.id} />;
+            return (
+              <Task value={e.value} key={i} id={i} idList={id} done={e.done} />
+            );
           })}
-        <ItemForm />
+        <ItemForm id={id} />
       </div>
     </div>
   );

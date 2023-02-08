@@ -2,22 +2,23 @@ import styles from "./ItemForm.module.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setCurrentFormTitleValue,
-  createNewTask,
+  setCurrentFormItemValue,
+  createNewItem,
 } from "../../../redux/slices/formSlice";
-import { IoCreateOutline, IoArrowUndoOutline } from "react-icons/io5";
+import { IoCreateOutline } from "react-icons/io5";
 import { CiCircleRemove } from "react-icons/ci";
 
-function ItemForm() {
+function ItemForm({ id }) {
   const dispatch = useDispatch();
 
-  const titleValue = useSelector((state) => state.form.currentFormTitleValue);
-  const isCreated = useSelector((state) => state.form.isCreated);
+  const titleValue = useSelector(
+    (state) => state.form.tasks.currentFormItemValue
+  );
+
+  const isCreated = useSelector((state) => state.form.tasks.isCreated);
 
   const onHandler = (event) =>
-    dispatch(setCurrentFormTitleValue(event.target.value));
-
-  console.log(useSelector((state) => state.form));
+    dispatch(setCurrentFormItemValue(event.target.value));
 
   return (
     <div className={!isCreated ? styles.root : styles.hidden}>
@@ -42,6 +43,7 @@ function ItemForm() {
             <IoCreateOutline
               className={styles.buttonTwo}
               onClick={(event) => {
+                dispatch(createNewItem(id));
                 event.preventDefault();
               }}
             ></IoCreateOutline>

@@ -8,6 +8,7 @@
   justify-content: left;
   align-items: center;
   margin-bottom: 14px;
+  z-index: 2;
 }
 
 .taskName {
@@ -28,10 +29,28 @@
   color: rgba(55, 55, 83, 0.692);
   transition: 3s;
   margin-left: 14px;
+  transform-origin: center center;
+  transform-box: view-box;
+  transition: transform 2s ease-in-out;
+}
+
+.done {
+  width: 20px;
+  height: 20px;
+  color: green;
+  transition: all 0.5s ease;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
 }
 
 .misterySquare:hover {
-  transform: rotate(360deg);
+  -webkit-transform: rotate(720deg);
+  transform: rotate(720deg);
 }
 
 .deleteElement {
