@@ -1,16 +1,16 @@
 import styles from "./Form.module.css";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function Form() {
-  const [test, setTest] = React.useState("");
+  const dispatch = useDispatch();
+  const titleValue = useSelector((state) => state.form.currentFormTitleValue);
   return (
     <div className={styles.root}>
       <form className={styles.form}>
         <input
           className={styles.imput}
           type="text"
-          //   value={}
-          onChange={(event) => console.log(event)}
           placeholder="Как назовем ваш список?"
           required
         />
@@ -22,16 +22,7 @@ function Form() {
           autoFocus
         />
 
-        <button
-          type="submit"
-          onClick={(value) => {
-            debugger;
-            setTest(value);
-            console.log(test);
-          }}
-        >
-          asdadasd
-        </button>
+        <button type="submit">asdadasd</button>
       </form>
     </div>
   );

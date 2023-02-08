@@ -1,8 +1,6 @@
 import styles from "./Task.module.css";
 import { HiOutlineCube } from "react-icons/hi";
 import { BsFillTrashFill } from "react-icons/bs";
-//куртая штука для подсказок.
-// import Tooltip from "@mui/material/Tooltip";
 
 function Task({ value }) {
   return (
