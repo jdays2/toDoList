@@ -1,8 +1,11 @@
 .header {
   width: 100%;
+  height: 200px;
   display: inline-flex;
   justify-content: center;
-  margin: 20px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  transition: 1s;
 }
 
 h1 {
@@ -11,15 +14,3 @@ h1 {
   font-size: 70px;
   font-weight: 100;
 }
-
-/*.blink {
-  animation: blink 1.5s infinite; 
-}
-@keyframes blink {
-  from {
-    opacity: 1; 
-  }
-  to {
-    opacity: 0; 
-  }
-}*/

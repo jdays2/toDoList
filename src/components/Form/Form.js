@@ -1,28 +1,51 @@
 import styles from "./Form.module.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  setCurrentFormTitleValue,
+  createNewTask,
+} from "../../redux/slices/formSlice";
+import { IoCreateOutline, IoArrowUndoOutline } from "react-icons/io5";
+
+import { getForm } from "../../redux/slices/formSlice";
 
 function Form() {
   const dispatch = useDispatch();
   const titleValue = useSelector((state) => state.form.currentFormTitleValue);
-  return (
-    <div className={styles.root}>
-      <form className={styles.form}>
-        <input
-          className={styles.imput}
-          type="text"
-          placeholder="Как назовем ваш список?"
-          required
-        />
-        <input
-          className={styles.imput}
-          type="text"
-          placeholder="?"
-          required
-          autoFocus
-        />
+  const isCreated = useSelector((state) => state.form.isCreated);
+  const onHandler = (event) =>
+    dispatch(setCurrentFormTitleValue(event.target.value));
 
-        <button type="submit">asdadasd</button>
+  console.log(useSelector((state) => state.form));
+
+  return (
+    <div className={!isCreated ? styles.root : styles.hidden}>
+      <form className={styles.form}>
+        <button className={styles.button__wrapper}>
+          <IoArrowUndoOutline
+            className={styles.button}
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch(getForm());
+            }}
+          ></IoArrowUndoOutline>
+        </button>
+        <input
+          value={titleValue}
+          onChange={(event) => onHandler(event)}
+          className={styles.imput}
+          type="text"
+          placeholder="Give your list a name."
+        />
+        <button className={styles.button__wrapper}>
+          <IoCreateOutline
+            className={styles.button}
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch(createNewTask());
+            }}
+          ></IoCreateOutline>
+        </button>
       </form>
     </div>
   );
