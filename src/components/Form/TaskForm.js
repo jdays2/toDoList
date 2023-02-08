@@ -1,4 +1,4 @@
-import styles from "./Form.module.css";
+import styles from "./TaskForm.module.css";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -9,7 +9,7 @@ import { IoCreateOutline, IoArrowUndoOutline } from "react-icons/io5";
 
 import { getForm } from "../../redux/slices/formSlice";
 
-function Form() {
+function TaskForm() {
   const dispatch = useDispatch();
   const titleValue = useSelector((state) => state.form.currentFormTitleValue);
   const isCreated = useSelector((state) => state.form.isCreated);
@@ -51,4 +51,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default TaskForm;
