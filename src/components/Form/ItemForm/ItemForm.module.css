@@ -1,0 +1,88 @@
+.root {
+  position: relative;
+  top: 0px;
+  z-index: 3;
+  display: inline-flex;
+  justify-content: center;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.form {
+  z-index: 2;
+}
+
+.form__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 280px;
+  height: 60px;
+  border-radius: 10px;
+  background: #fff2ae;
+}
+
+.imput {
+  border-radius: 10px;
+  width: 150px;
+  height: 20px;
+  padding: 10px 15px;
+
+  opacity: 0.6;
+  transition: 0.4s;
+  border: 0;
+  margin: 10px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  color: #000000;
+
+  background: rgba(128, 128, 128, 0.438);
+}
+
+.imput:hover {
+  opacity: 0.5s;
+}
+
+.hidden {
+  top: -60px;
+  transition: 1s;
+}
+
+.buttonOne {
+  color: rgba(55, 55, 83, 0.692);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 13px;
+  top: 18px;
+
+  transition: 0.4s;
+}
+
+.buttonTwo {
+  color: rgba(55, 55, 83, 0.692);
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 13px;
+  top: 18px;
+
+  transition: 0.4s;
+}
+
+.buttonOne:hover,
+.buttonTwo:hover {
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
+.button__wrapper {
+  border: 0;
+  background-color: inherit;
+  width: 32px;
+  height: 3 2px;
+}

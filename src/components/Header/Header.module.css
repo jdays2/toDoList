@@ -1,27 +1,16 @@
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 20px;
+  height: 200px;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  transition: 1s;
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-}
-
-.logo,
-.avatar {
-  height: 60px;
-  padding: 10px;
-}
-
-.avatar {
-  border-radius: 45px;
-  border: 1px solid rgb(248, 192, 192);
-}
-
-.profileName {
-  font-size: 28px;
-  color: blueviolet;
+h1 {
+  font-family: "Archivo", sans-serif;
+  color: #ffdfdb;
+  font-size: 70px;
+  font-weight: 100;
 }

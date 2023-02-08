@@ -1,19 +1,18 @@
 import styles from "./Header.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getForm } from "../../redux/slices/formSlice";
 
 function Header() {
+  const dispatch = useDispatch();
+  const isCreated = useSelector((state) => {
+    return state.form.isCreated;
+  });
+
   return (
     <div className={styles.header}>
-      <img
-        className={styles.logo}
-        src="https://www.svgrepo.com/show/356977/todo-list.svg"
-      />
-      <div className={styles.profile}>
-        <img
-          className={styles.avatar}
-          src="https://cdn0.iconfinder.com/data/icons/people-avatar-glyph-1/128/1_21-512.png"
-        />
-        {/* <span className={styles.profileName}>JDayS</span> */}
-      </div>
+      <h1 onClick={() => dispatch(getForm(false))}>
+        {isCreated ? "Just do it" : ""}
+      </h1>
     </div>
   );
 }
