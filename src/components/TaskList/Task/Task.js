@@ -6,7 +6,7 @@ import {
   toggleReadiness,
 } from "./../../../redux/slices/formSlice";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function Task({ value, idList, id, done }) {
   const dispatch = useDispatch();

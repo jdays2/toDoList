@@ -59,17 +59,19 @@ export const formSlice = createSlice({
   initialState,
   reducers: {
     setCurrentFormTitleValue(state, action) {
-      // state.currentFormTitleValue = action.payload;
       return produce(state, (draft) => {
         draft.currentFormTitleValue = action.payload;
       });
     },
+
     setCurrentFormItemValue(state, action) {
-      // return { ...state, isCreated: false };
       return produce(state, (draft) => {
+        draft.tasks[action.payload.idList].currentFormItemValue =
+          action.payload.event;
         draft.isCreated = false;
       });
     },
+
     createNewTask(state) {
       return produce(state, (draft) => {
         draft.tasks.push({
@@ -84,8 +86,9 @@ export const formSlice = createSlice({
     },
     createNewItem(state, action) {
       return produce(state, (draft) => {
-        const newItem = draft.tasks[action.payload.idList].currentFormItemValue;
-        draft.tasks[action.payload.idList].items.push({
+        const newItem = draft.tasks[action.payload].currentFormItemValue;
+
+        draft.tasks[action.payload].items.push({
           value: newItem,
           done: false,
         });
@@ -94,6 +97,12 @@ export const formSlice = createSlice({
     getForm(state, action) {
       return produce(state, (draft) => {
         draft.isCreated = action.payload;
+      });
+    },
+    getItemForm(state, action) {
+      return produce(state, (draft) => {
+        debugger;
+        draft.tasks[action.payload.id].isCreated = action.payload.value;
       });
     },
     deleteSomeTasks(state, action) {
@@ -127,5 +136,6 @@ export const {
   deleteSomeTasks,
   deleteSomeItems,
   toggleReadiness,
+  getItemForm,
 } = formSlice.actions;
 export default formSlice.reducer;

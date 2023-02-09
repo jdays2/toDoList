@@ -13,7 +13,15 @@ function App() {
       <Form />
       <div className="content__wrapper">
         {tasks.map((e, i) => {
-          return <TaskList title={e.title} items={e.items} key={i} id={i} />;
+          return (
+            <TaskList
+              title={e.title}
+              items={e.items}
+              key={i}
+              id={i}
+              created={e.isCreated}
+            />
+          );
         })}
       </div>
     </div>
