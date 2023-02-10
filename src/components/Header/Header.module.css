@@ -1,18 +1,19 @@
 .header {
   width: 1900px;
   position: relative;
-  height: 200px;
+
   display: inline-flex;
   justify-content: center;
 
   margin-bottom: 40px;
   transition: 1s;
   font-family: "Archivo", sans-serif;
-  color: #e85a4f;
+  color: #e2ff6eee;
+  /* background-color: rgba(255, 255, 255, 0.925); */
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 30px;
   font-weight: 100;
 }
 
@@ -22,4 +23,66 @@ h1 {
   font-weight: 500;
   left: 20px;
   top: 0px;
+}
+
+.abouteMe {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 500;
+  right: 60px;
+  top: 10px;
+}
+
+.profileIcon {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.one {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.two {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 54px;
+  width: 30px;
+  height: 30px;
+}
+
+.tree {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: 84px;
+  width: 30px;
+  height: 30px;
+}
+
+.four {
+  position: absolute;
+  right: 20px;
+  top: 118px;
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.exit {
+  position: absolute;
+  right: 20px;
+  top: 155px;
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
 }

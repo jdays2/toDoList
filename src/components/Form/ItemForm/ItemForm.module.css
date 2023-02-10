@@ -20,7 +20,7 @@
   width: 280px;
   height: 60px;
   border-radius: 10px;
-  background: #d8c3a5;
+  background: #fffc61d5;
 }
 
 .imput {
@@ -40,7 +40,7 @@
   line-height: 24px;
   color: #000000;
 
-  background: #d8c3a5;
+  background: white;
 }
 
 .imput:hover {
