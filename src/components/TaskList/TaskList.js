@@ -2,9 +2,7 @@ import styles from "./TaskList.module.css";
 import Task from "./Task/Task";
 import { AiOutlineCloseSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-
 import React from "react";
-
 import { deleteSomeTasks, getItemForm } from "./../../redux/slices/formSlice";
 import ItemForm from "../Form/ItemForm/ItemForm";
 import Draggable from "react-draggable";
