@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setCurrentFormItemValue,
   createNewItem,
+  getItemForm,
 } from "../../../redux/slices/formSlice";
 import { IoCreateOutline } from "react-icons/io5";
 import { CiCircleRemove } from "react-icons/ci";
@@ -12,13 +13,13 @@ function ItemForm({ idList }) {
   const dispatch = useDispatch();
 
   const titleValue = useSelector(
-    (state) => state.form.tasks.currentFormItemValue
+    (state) => state.form.tasks[idList].currentFormItemValue
   );
 
-  const isCreated = useSelector((state) => state.form.tasks.isCreated);
+  const isCreated = useSelector((state) => state.form.tasks[idList].isCreated);
 
   const onHandler = (event, idList) =>
-    dispatch(setCurrentFormItemValue({ value: event.target.value, idList }));
+    dispatch(setCurrentFormItemValue({ event, idList }));
 
   return (
     <div className={!isCreated ? styles.root : styles.hidden}>
@@ -29,12 +30,14 @@ function ItemForm({ idList }) {
               className={styles.buttonOne}
               onClick={(event) => {
                 event.preventDefault();
+                dispatch(getItemForm({ id: idList, value: !isCreated }));
               }}
             ></CiCircleRemove>
           </button>
           <input
+            maxlength="16"
             value={titleValue}
-            onChange={(event) => onHandler(event)}
+            onChange={(event) => onHandler(event.target.value, idList)}
             className={styles.imput}
             type="text"
             placeholder="What should be done?"
@@ -44,7 +47,7 @@ function ItemForm({ idList }) {
               className={styles.buttonTwo}
               onClick={(event) => {
                 event.preventDefault();
-                dispatch(createNewItem());
+                dispatch(createNewItem(idList));
               }}
             ></IoCreateOutline>
           </button>

@@ -29,10 +29,11 @@ function TaskForm() {
           ></IoArrowUndoOutline>
         </button>
         <input
+          maxlength="16"
           value={titleValue}
           onChange={(event) => onHandler(event)}
           className={styles.imput}
-          type="text"
+          type="submite"
           placeholder="Give your list a name."
         />
         <button className={styles.button__wrapper}>

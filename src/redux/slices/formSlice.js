@@ -3,53 +3,7 @@ import { current } from "@reduxjs/toolkit";
 import { produce } from "immer";
 
 const initialState = {
-  tasks: [
-    {
-      title: "Shopping",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: true },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-
-    {
-      title: "B",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: false },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-    {
-      title: "N",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: false },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-    {
-      title: "M",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: false },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-  ],
+  tasks: [],
   currentFormTitleValue: "",
   isCreated: true,
 };
@@ -59,19 +13,24 @@ export const formSlice = createSlice({
   initialState,
   reducers: {
     setCurrentFormTitleValue(state, action) {
-      // state.currentFormTitleValue = action.payload;
       return produce(state, (draft) => {
         draft.currentFormTitleValue = action.payload;
       });
     },
+
     setCurrentFormItemValue(state, action) {
-      // return { ...state, isCreated: false };
       return produce(state, (draft) => {
-        draft.isCreated = false;
+        draft.tasks[action.payload.idList].currentFormItemValue =
+          action.payload.event;
+        // draft.isCreated = false;
       });
     },
+
     createNewTask(state) {
       return produce(state, (draft) => {
+        if (draft.currentFormTitleValue === "") {
+          return;
+        }
         draft.tasks.push({
           title: draft.currentFormTitleValue,
           currentFormItemValue: "",
@@ -84,16 +43,26 @@ export const formSlice = createSlice({
     },
     createNewItem(state, action) {
       return produce(state, (draft) => {
-        const newItem = draft.tasks[action.payload.idList].currentFormItemValue;
-        draft.tasks[action.payload.idList].items.push({
+        if (draft.tasks[action.payload].currentFormItemValue === "") {
+          return;
+        }
+        const newItem = draft.tasks[action.payload].currentFormItemValue;
+        draft.tasks[action.payload].items.push({
           value: newItem,
           done: false,
         });
+        draft.tasks[action.payload].currentFormItemValue = "";
       });
     },
     getForm(state, action) {
       return produce(state, (draft) => {
         draft.isCreated = action.payload;
+      });
+    },
+    getItemForm(state, action) {
+      return produce(state, (draft) => {
+        debugger;
+        draft.tasks[action.payload.id].isCreated = action.payload.value;
       });
     },
     deleteSomeTasks(state, action) {
@@ -127,5 +96,6 @@ export const {
   deleteSomeTasks,
   deleteSomeItems,
   toggleReadiness,
+  getItemForm,
 } = formSlice.actions;
 export default formSlice.reducer;

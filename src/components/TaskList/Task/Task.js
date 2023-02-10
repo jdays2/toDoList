@@ -1,24 +1,23 @@
 import styles from "./Task.module.css";
-import { HiOutlineCube } from "react-icons/hi";
+import { VscCheck } from "react-icons/vsc";
 import { BsFillTrashFill } from "react-icons/bs";
 import {
   deleteSomeItems,
   toggleReadiness,
 } from "./../../../redux/slices/formSlice";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function Task({ value, idList, id, done }) {
   const dispatch = useDispatch();
 
   return (
-    <div className={styles.task}>
-      <HiOutlineCube
-        className={
-          done
-            ? `${styles.misterySquare} ${styles.done}`
-            : `${styles.misterySquare}`
-        }
+    <div
+      className={done ? `${styles.task} ${styles.taskDone}` : `${styles.task}`}
+      onDoubleClick={() => dispatch(toggleReadiness({ idList, id, done }))}
+    >
+      <VscCheck
+        className={done ? `${styles.done}` : `${styles.hidden}`}
         onClick={() => dispatch(toggleReadiness({ idList, id, done }))}
       />
 
