@@ -8,42 +8,56 @@
 }
 
 .form {
+  max-width: 600px;
   position: absolute;
   top: 12%;
   z-index: 2;
-  background: rgb(0, 0, 0, 0);
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.637);
+
   display: flex;
   align-items: center;
+  margin: 10px;
+  /* box-shadow: 0 0 10px rgb(255, 144, 249); */
 }
 
 .imput {
-  width: 620px;
-  height: 80px;
-  padding: 10px 15px;
-  font-size: 47px;
-  opacity: 0.6;
+  width: 400px;
+  height: 60px;
+  padding: 5px 15px;
+  font-size: 37px;
+  opacity: 1;
   transition: 0.4s;
   border-radius: 10px;
   margin: 10px;
-  border: 3px solid rgba(#e98074 0.979);
-  background: rgb(0, 0, 0, 0);
-  color: white;
+  /* border: 3px solid rgba(#e98074 0.979); */
+  background: rgba(0, 0, 0, 0.322);
+  color: #e2ff6eee;
 }
 
-.imput:active {
-  opacity: 1;
+@media (max-width: 650px) {
+  .imput {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imput {
+    max-width: 160px;
+  }
 }
 
 .hidden {
+  position: absolute;
   transition: 1s;
   display: none;
 }
 
 .button {
-  color: rgba(150, 150, 150, 0.479);
+  color: rgb(255, 144, 249);
+  background-color: rgba(240, 255, 255, 0);
   width: 50px;
   height: 50px;
+  padding: 6px;
   margin-bottom: 4px;
   margin-right: 4px;
   transition: 0.4s;
@@ -56,7 +70,7 @@
 
 .button__wrapper {
   border: 0;
-  background-color: inherit;
-  width: 62px;
-  height: 62px;
+  background-color: rgba(240, 255, 255, 0);
+  width: 70px;
+  height: 70px;
 }

@@ -3,53 +3,7 @@ import { current } from "@reduxjs/toolkit";
 import { produce } from "immer";
 
 const initialState = {
-  tasks: [
-    {
-      title: "Shopping",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: true },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-
-    {
-      title: "B",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: false },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-    {
-      title: "N",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: false },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-    {
-      title: "M",
-      currentFormItemValue: "",
-      isCreated: false,
-      items: [
-        { id: 0, value: "Buy Potato!", done: false },
-        { id: 1, value: "Buy vibrator...", done: false },
-        { id: 2, value: "Sell urself", done: false },
-        { id: 3, value: "Buy Potato!", done: false },
-      ],
-    },
-  ],
+  tasks: [],
   currentFormTitleValue: "",
   isCreated: true,
 };
@@ -68,7 +22,7 @@ export const formSlice = createSlice({
       return produce(state, (draft) => {
         draft.tasks[action.payload.idList].currentFormItemValue =
           action.payload.event;
-        draft.isCreated = false;
+        // draft.isCreated = false;
       });
     },
 
@@ -97,6 +51,7 @@ export const formSlice = createSlice({
           value: newItem,
           done: false,
         });
+        draft.tasks[action.payload].currentFormItemValue = "";
       });
     },
     getForm(state, action) {

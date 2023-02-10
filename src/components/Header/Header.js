@@ -1,6 +1,5 @@
 import styles from "./Header.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { getForm } from "../../redux/slices/formSlice";
+
 import { CgProfile } from "react-icons/cg";
 import { BsTelegram } from "react-icons/bs";
 import { SlSocialVkontakte } from "react-icons/sl";
@@ -11,19 +10,14 @@ import {
   AiOutlineInstagram,
 } from "react-icons/ai";
 function Header() {
-  const dispatch = useDispatch();
-  const isCreated = useSelector((state) => {
-    return state.form.isCreated;
-  });
-
   const [popupOpened, SetpopupOpened] = React.useState(false);
 
   return (
     <div className={styles.header}>
-      <p className={styles.home}>HOME</p>
-      <h1 onClick={() => dispatch(getForm(false))}>
-        {isCreated ? "What's the plan?" : ""}
-      </h1>
+      <a href="#">
+        <p className={styles.home}>HOME</p>
+      </a>
+      <h1>WELCOME</h1>
 
       <div>
         <p className={styles.abouteMe}>ABOUT ME</p>

@@ -1,15 +1,21 @@
-.header {
-  width: 1900px;
-  position: relative;
+a {
+  font-style: none;
+  text-decoration: none;
+  color: #e2ff6eee;
+}
 
+a:hover {
+  color: rgba(173, 0, 9, 0.836);
+}
+
+.header {
+  max-width: 1900px;
+  min-width: 60px;
   display: inline-flex;
   justify-content: center;
-
   margin-bottom: 40px;
   transition: 1s;
-  font-family: "Archivo", sans-serif;
   color: #e2ff6eee;
-  /* background-color: rgba(255, 255, 255, 0.925); */
 }
 
 h1 {
@@ -31,6 +37,12 @@ h1 {
   font-weight: 500;
   right: 60px;
   top: 10px;
+}
+
+@media (max-width: 480px) {
+  .abouteMe {
+    display: none;
+  }
 }
 
 .profileIcon {

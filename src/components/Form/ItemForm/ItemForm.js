@@ -9,7 +9,7 @@ import {
 import { IoCreateOutline } from "react-icons/io5";
 import { CiCircleRemove } from "react-icons/ci";
 
-function ItemForm({ idList, created }) {
+function ItemForm({ idList }) {
   const dispatch = useDispatch();
 
   const titleValue = useSelector(
@@ -30,12 +30,12 @@ function ItemForm({ idList, created }) {
               className={styles.buttonOne}
               onClick={(event) => {
                 event.preventDefault();
-                dispatch(getItemForm({ id: idList, value: !created }));
+                dispatch(getItemForm({ id: idList, value: !isCreated }));
               }}
             ></CiCircleRemove>
           </button>
           <input
-            maxlength="10"
+            maxlength="16"
             value={titleValue}
             onChange={(event) => onHandler(event.target.value, idList)}
             className={styles.imput}
