@@ -1,16 +1,25 @@
 .header {
-  width: 100%;
+  width: 1900px;
+  position: relative;
   height: 200px;
   display: inline-flex;
   justify-content: center;
-  margin-top: 60px;
+
   margin-bottom: 40px;
   transition: 1s;
+  font-family: "Archivo", sans-serif;
+  color: #e85a4f;
 }
 
 h1 {
-  font-family: "Archivo", sans-serif;
-  color: #ffdfdb;
   font-size: 70px;
   font-weight: 100;
+}
+
+.home {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 500;
+  left: 20px;
+  top: 0px;
 }

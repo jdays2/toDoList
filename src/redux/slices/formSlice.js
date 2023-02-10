@@ -74,6 +74,9 @@ export const formSlice = createSlice({
 
     createNewTask(state) {
       return produce(state, (draft) => {
+        if (draft.currentFormTitleValue === "") {
+          return;
+        }
         draft.tasks.push({
           title: draft.currentFormTitleValue,
           currentFormItemValue: "",
@@ -86,8 +89,10 @@ export const formSlice = createSlice({
     },
     createNewItem(state, action) {
       return produce(state, (draft) => {
+        if (draft.tasks[action.payload].currentFormItemValue === "") {
+          return;
+        }
         const newItem = draft.tasks[action.payload].currentFormItemValue;
-
         draft.tasks[action.payload].items.push({
           value: newItem,
           done: false,

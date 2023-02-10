@@ -10,8 +10,9 @@ function Header() {
 
   return (
     <div className={styles.header}>
+      <p className={styles.home}>HOME</p>
       <h1 onClick={() => dispatch(getForm(false))}>
-        {isCreated ? "Just do it" : ""}
+        {isCreated ? "What's the plan?" : ""}
       </h1>
     </div>
   );

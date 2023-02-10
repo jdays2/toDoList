@@ -1,7 +1,6 @@
 import styles from "./TaskList.module.css";
 import Task from "./Task/Task";
-import addNewElement from "../../assets/img/createNewElement.svg";
-import { AiOutlineCloseSquare } from "react-icons/ai";
+import { AiOutlineCloseSquare, AiOutlinePlusSquare } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 
 import React from "react";
@@ -17,9 +16,8 @@ function TaskList({ items, title, id, created }) {
     <Draggable>
       <div className={styles.list__wrapper}>
         <div className={styles.item}>
-          <img
+          <AiOutlinePlusSquare
             className={styles.addNew}
-            src={addNewElement}
             onClick={() => {
               dispatch(getItemForm({ id, value: !created }));
             }}
