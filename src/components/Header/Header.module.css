@@ -52,14 +52,12 @@ h1 {
 .links {
 	width: 30px;
 	height: 30px;
-	border: 1px solid black;
 	transition: 0.4s;
 }
 
 .links_wrapper {
 	height: 0;
 	width: 30px;
-	border: 1px solid black;
 	overflow: hidden;
 	transition: 0.4s;
 }

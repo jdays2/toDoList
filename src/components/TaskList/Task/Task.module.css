@@ -1,7 +1,7 @@
 .task {
 	position: relative;
 	width: 280px;
-	height: 60px;
+	min-height: 60px;
 	background: white;
 	border-radius: 2px;
 	display: flex;
@@ -10,6 +10,8 @@
 	margin-bottom: 14px;
 	z-index: 2;
 	box-sizing: border-box;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
 
 .task:last-child {
@@ -22,19 +24,20 @@
 }
 
 .taskDone {
-	background: rgba(255, 255, 255, 0.575);
+	background: rgba(0, 0, 0, 0.421);
 	text-decoration: line-through;
 	transition: 0.2s;
 }
 
 .taskName {
-	font-family: "Inter";
+	font-family: "Caveat";
 	font-style: normal;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: 22px;
 	line-height: 24px;
 	margin: 0 auto;
 	justify-content: center;
+	margin-right: 25px;
 
 	color: #000000;
 }

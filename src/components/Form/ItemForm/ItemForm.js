@@ -40,7 +40,7 @@ function ItemForm({ idList }) {
 							}}></CiCircleRemove>
 					</button> */}
 					<input
-						maxlength="16"
+						// maxlength="16"
 						value={titleValue}
 						onChange={(event) => onHandler(event.target.value, idList)}
 						className={styles.imput}

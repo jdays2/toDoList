@@ -15,10 +15,10 @@ function Task({ value, idList, id, done }) {
 		<div
 			className={done ? `${styles.task} ${styles.taskDone}` : `${styles.task}`}
 			onDoubleClick={() => dispatch(toggleReadiness({ idList, id, done }))}>
-			<VscCheck
+			{/* <VscCheck
 				className={done ? `${styles.done}` : `${styles.hidden}`}
 				onClick={() => dispatch(toggleReadiness({ idList, id, done }))}
-			/>
+			/> */}
 
 			<p
 				className={styles.taskName}
