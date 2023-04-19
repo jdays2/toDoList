@@ -25,17 +25,18 @@ function Task({ value, idList, id }) {
 	const setActive = () => {
 		if (justRead) {
 			setDone(!done);
-			alert("active!");
+		}
+	};
+
+	const setRead = () => {
+		if (!done) {
+			setJustRead(!justRead);
 		}
 	};
 	return (
 		<div
 			className={done ? `${styles.task} ${styles.taskDone}` : `${styles.task}`}>
-			<CiEdit
-				onClick={() => setJustRead(!justRead)}
-				className={styles.edit_button}>
-				1
-			</CiEdit>
+			<CiEdit onClick={setRead} className={styles.edit_button}></CiEdit>
 			<textarea
 				className={
 					justRead ? styles.taskName : `${styles.taskName} ${styles.active}`
