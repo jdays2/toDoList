@@ -1,70 +1,77 @@
 .task {
-  position: relative;
-  width: 280px;
-  height: 60px;
-  background: white;
-  border-radius: 2px;
-  display: flex;
-  color: rgba(3, 29, 0, 0.644);
-  align-items: center;
-  margin-bottom: 14px;
-  z-index: 2;
-  box-sizing: border-box;
+	position: relative;
+	width: 280px;
+	min-height: 60px;
+	background: white;
+	border-radius: 2px;
+	display: flex;
+	color: rgba(3, 29, 0, 0.644);
+	align-items: center;
+	margin-bottom: 14px;
+	z-index: 2;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+.task:last-child {
+	padding-bottom: 220px;
 }
 
 .task:hover {
-  border: 2px solid #4ec4688f;
-  transition: 0.6s;
+	border: 2px solid #4ec4688f;
+	transition: 0.6s;
 }
 
 .taskDone {
-  background: rgba(255, 255, 255, 0.575);
-  text-decoration: line-through;
-  transition: 0.2s;
+	background: rgba(0, 0, 0, 0.421);
+	text-decoration: line-through;
+	transition: 0.2s;
 }
 
 .taskName {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  margin: 0 auto;
-  justify-content: center;
+	font-family: "Caveat";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 24px;
+	margin: 0 auto;
+	justify-content: center;
+	margin-right: 25px;
 
-  color: #000000;
+	color: #000000;
 }
 
 .done {
-  color: green;
-  width: 30px;
-  height: 34px;
-  position: absolute;
-  left: 10px;
-  top: 12px;
+	color: green;
+	width: 30px;
+	height: 34px;
+	position: absolute;
+	left: 10px;
+	top: 12px;
 }
 
 .hidden {
-  color: rgb(90, 90, 90);
-  width: 30px;
-  height: 34px;
+	color: rgb(90, 90, 90);
+	width: 30px;
+	height: 34px;
 
-  position: absolute;
-  left: 10px;
-  top: 12px;
+	position: absolute;
+	left: 10px;
+	top: 12px;
 }
 
 .deleteElement {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  color: rgba(55, 55, 83, 0.692);
-  right: 15px;
-  transition: 0.5s;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	color: rgba(55, 55, 83, 0.692);
+	right: 15px;
+	transition: 0.5s;
 }
 
 .deleteElement:hover {
-  width: 22px;
-  height: 22px;
-  color: red;
+	width: 22px;
+	height: 22px;
+	color: red;
 }

@@ -1,100 +1,124 @@
 a {
-  font-style: none;
-  text-decoration: none;
-  color: #e2ff6eee;
+	font-style: none;
+	text-decoration: none;
+	color: #e2ff6eee;
 }
 
 a:hover {
-  color: rgba(173, 0, 9, 0.836);
+	color: rgba(173, 0, 9, 0.836);
 }
 
 .header {
-  max-width: 1900px;
-  min-width: 60px;
-  display: inline-flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  transition: 1s;
-  color: #e2ff6eee;
+	max-width: 1900px;
+	min-width: 60px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 40px;
+	transition: 1s;
+	color: black;
 }
 
 h1 {
-  font-size: 30px;
-  font-weight: 100;
+	top: 0;
+	font-weight: 600;
+
+	font-family: "Caveat";
+	font-size: 54px;
+	color: rgba(0, 40, 20, 0.854);
 }
 
 .home {
-  position: absolute;
-  font-size: 20px;
-  font-weight: 500;
-  left: 20px;
-  top: 0px;
+	position: absolute;
+	font-size: 20px;
+	font-weight: 500;
+	left: 20px;
+	top: 0px;
 }
 
 .abouteMe {
-  position: absolute;
-  font-size: 16px;
-  font-weight: 500;
-  right: 60px;
-  top: 10px;
+	position: absolute;
+	font-size: 16px;
+	font-weight: 500;
+	right: 60px;
+	top: 10px;
+	cursor: pointer;
+	display: flex;
+	height: 30px;
+	width: 120px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.links {
+	width: 30px;
+	height: 30px;
+	transition: 0.4s;
+}
+
+.links_wrapper {
+	height: 0;
+	width: 30px;
+	overflow: hidden;
+	transition: 0.4s;
+}
+
+.show {
+	transition: 0.4s;
+	overflow: visible;
+	width: 30px;
+	height: 120px;
 }
 
 @media (max-width: 480px) {
-  .abouteMe {
-    display: none;
-  }
+	.abouteMe {
+		display: none;
+	}
 }
 
 .profileIcon {
-  position: absolute;
-  cursor: pointer;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
+	cursor: pointer;
+	/* right: 20px; */
+	/* top: 20px; */
+	width: 30px;
+	height: 30px;
 }
 
 .one {
-  position: absolute;
-  cursor: pointer;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
+	cursor: pointer;
+	/* right: 20px; */
+	/* top: 20px; */
+	width: 30px;
+	height: 30px;
 }
 
 .two {
-  position: absolute;
-  cursor: pointer;
-  right: 20px;
-  top: 54px;
-  width: 30px;
-  height: 30px;
+	cursor: pointer;
+	/* right: 20px; */
+	/* top: 54px; */
+	width: 30px;
+	height: 30px;
 }
 
 .tree {
-  position: absolute;
-  cursor: pointer;
-  right: 20px;
-  top: 84px;
-  width: 30px;
-  height: 30px;
+	cursor: pointer;
+	/* right: 20px; */
+	/* top: 84px; */
+	width: 30px;
+	height: 30px;
 }
 
 .four {
-  position: absolute;
-  right: 20px;
-  top: 118px;
-  width: 31px;
-  height: 31px;
-  cursor: pointer;
+	/* right: 20px; */
+	/* top: 118px; */
+	width: 31px;
+	height: 31px;
+	cursor: pointer;
 }
 
 .exit {
-  position: absolute;
-  right: 20px;
-  top: 155px;
-  width: 31px;
-  height: 31px;
-  cursor: pointer;
+	/* right: 20px; */
+	/* top: 155px; */
+	width: 31px;
+	height: 31px;
+	cursor: pointer;
 }

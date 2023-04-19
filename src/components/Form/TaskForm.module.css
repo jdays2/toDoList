@@ -1,76 +1,75 @@
 .root {
-  position: absolute;
-  top: 90px;
-  z-index: 3;
-  display: flex;
-  justify-content: center;
-  transition: 1s;
+	position: absolute;
+	top: 110px;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	transition: 1s;
 }
 
 .form {
-  max-width: 600px;
-  position: absolute;
-  top: 12%;
-  z-index: 2;
-  background: rgba(0, 0, 0, 0.637);
+	max-width: 600px;
+	position: absolute;
+	top: 26%;
+	z-index: 2;
 
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  /* box-shadow: 0 0 10px rgb(255, 144, 249); */
+	display: flex;
+	align-items: center;
+	/* margin: 10px; */
+	/* box-shadow: 0 0 10px rgb(255, 144, 249); */
 }
 
 .imput {
-  width: 400px;
-  height: 60px;
-  padding: 5px 15px;
-  font-size: 37px;
-  opacity: 1;
-  transition: 0.4s;
-  border-radius: 10px;
-  margin: 10px;
-  /* border: 3px solid rgba(#e98074 0.979); */
-  background: rgba(0, 0, 0, 0.322);
-  color: #e2ff6eee;
+	width: 340px;
+	height: 40px;
+	padding: 5px 15px;
+	font-size: 24px;
+	opacity: 1;
+	transition: 0.4s;
+	border-radius: 8px;
+	/* margin: 10px; */
+	/* border: 3px solid rgba(#e98074 0.979); */
+	/* background: rgba(0, 0, 0, 0.322); */
+	color: black;
 }
 
 @media (max-width: 650px) {
-  .imput {
-    max-width: 240px;
-  }
+	.imput {
+		max-width: 240px;
+	}
 }
 
 @media (max-width: 480px) {
-  .imput {
-    max-width: 160px;
-  }
+	.imput {
+		max-width: 160px;
+	}
 }
 
 .hidden {
-  position: absolute;
-  transition: 1s;
-  display: none;
+	position: absolute;
+	transition: 1s;
+	display: none;
 }
 
 .button {
-  color: rgb(255, 144, 249);
-  background-color: rgba(240, 255, 255, 0);
-  width: 50px;
-  height: 50px;
-  padding: 6px;
-  margin-bottom: 4px;
-  margin-right: 4px;
-  transition: 0.4s;
+	color: rgb(255, 144, 249);
+	background-color: rgba(240, 255, 255, 0);
+	width: 50px;
+	height: 50px;
+	padding: 6px;
+	margin-bottom: 4px;
+	margin-right: 4px;
+	transition: 0.4s;
 }
 
 .button:hover {
-  transition: 0.4s;
-  transform: scale(1.1);
+	transition: 0.4s;
+	transform: scale(1.1);
 }
 
 .button__wrapper {
-  border: 0;
-  background-color: rgba(240, 255, 255, 0);
-  width: 70px;
-  height: 70px;
+	border: 0;
+	background-color: rgba(240, 255, 255, 0);
+	width: 70px;
+	height: 70px;
 }
