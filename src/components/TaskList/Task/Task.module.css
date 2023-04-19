@@ -82,10 +82,16 @@ textarea {
 	cursor: pointer;
 	transition: 0.5s;
 }
+
 .edit_button:hover {
 	width: 22px;
 	height: 22px;
 	color: rgb(133, 133, 0);
+}
+
+.edit_button__active {
+	transform: scale(1.5);
+	color: rgb(20, 80, 27);
 }
 
 .deleteElement {

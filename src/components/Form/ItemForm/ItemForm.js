@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
 	setCurrentFormItemValue,
 	createNewItem,
-	getItemForm,
 } from "../../../redux/slices/formSlice";
-import { IoCreateOutline } from "react-icons/io5";
-import { CiCircleRemove } from "react-icons/ci";
+import { IoMdSend } from "react-icons/io";
 
 function ItemForm({ idList }) {
 	const dispatch = useDispatch();
@@ -28,6 +26,10 @@ function ItemForm({ idList }) {
 		}
 	};
 
+	const setItem = () => {
+		dispatch(createNewItem(idList));
+	};
+
 	return (
 		<div className={!isCreated ? styles.root : styles.hidden}>
 			<form className={styles.form}>
@@ -40,6 +42,9 @@ function ItemForm({ idList }) {
 						placeholder="Add the task name and press 'Enter'"
 						onKeyDown={onKeyDown}
 					/>
+					<IoMdSend
+						className={styles.form__button}
+						onClick={setItem}></IoMdSend>
 				</div>
 			</form>
 		</div>

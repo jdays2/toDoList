@@ -3,7 +3,6 @@ import TaskList from "./components/TaskList/TaskList";
 import Header from "./components/Header/Header";
 
 import Form from "./components/Form/TaskForm";
-import { CgProfile } from "react-icons/cg";
 import { BsTelegram } from "react-icons/bs";
 import { SlSocialVkontakte } from "react-icons/sl";
 import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
