@@ -1,54 +1,66 @@
 .list__wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	position: relative;
 }
 
 .item {
-  width: 340px;
-  position: relative;
-  /* background: #3d3d3d; */
-  border-radius: 2px;
-  background-color: #252835d7;
+	min-width: 340px;
+	padding-left: 30px;
+	padding-right: 30px;
+	position: relative;
+	border-radius: 2px;
+	background-color: #fcefdc;
+	border-radius: 9px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 30px;
-  opacity: 0.999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 130px;
+	opacity: 0.999;
+	box-shadow: 7px -3px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 .title {
-  margin-bottom: 10px;
-  font-family: "Nunito";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  line-height: 34px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-family: "Nunito";
+	font-family: "Caveat";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 34px;
+	line-height: 34px;
 
-  color: #e2ff6eee;
+	color: black;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 300px;
+	height: auto;
+	word-wrap: break-word;
 }
 
 .addNew {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 40px;
-  top: 10px;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 40px;
+	top: 10px;
 }
 
 .addNew:hover {
-  color: rgba(221, 196, 52, 0.719);
+	color: rgba(221, 196, 52, 0.719);
 }
 
 .deleteElement {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }
 
 .deleteElement:hover {
-  color: rgba(173, 0, 9, 0.836);
+	color: rgba(173, 0, 9, 0.836);
 }
