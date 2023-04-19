@@ -11,38 +11,32 @@ function TaskList({ items, title, id, created }) {
 	const dispatch = useDispatch();
 
 	return (
-		<Draggable>
-			<div className={styles.list__wrapper}>
-				<div className={styles.item}>
-					{/* <AiOutlinePlusSquare
+		<>
+			{/* <div className={styles.list__wrapper}> */}
+			<div className={styles.item}>
+				{/* <AiOutlinePlusSquare
 						className={styles.addNew}
 						onClick={() => {
 							dispatch(getItemForm({ id, value: !created }));
 						}}
 					/> */}
-					<AiOutlineCloseSquare
-						className={styles.deleteElement}
-						onClick={() => dispatch(deleteSomeTasks(id))}
-					/>
-					<p className={styles.title}>{title}</p>
+				<AiOutlineCloseSquare
+					className={styles.deleteElement}
+					onClick={() => dispatch(deleteSomeTasks(id))}
+				/>
+				<p className={styles.title}>{title}</p>
 
-					{items &&
-						items.map((e, i) => {
-							return (
-								<Task
-									value={e.value}
-									key={i}
-									id={i}
-									idList={id}
-									done={e.done}
-								/>
-							);
-						})}
+				{items &&
+					items.map((e, i) => {
+						return (
+							<Task value={e.value} key={i} id={i} idList={id} done={e.done} />
+						);
+					})}
 
-					<ItemForm idList={id} created={created} />
-				</div>
+				<ItemForm idList={id} created={created} />
 			</div>
-		</Draggable>
+			{/* </div> */}
+		</>
 	);
 }
 

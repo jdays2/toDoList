@@ -32,16 +32,7 @@ function ItemForm({ idList }) {
 		<div className={!isCreated ? styles.root : styles.hidden}>
 			<form className={styles.form}>
 				<div className={styles.form__content}>
-					{/* <button className={styles.button__wrapper}>
-						<CiCircleRemove
-							className={styles.buttonOne}
-							onClick={(event) => {
-								event.preventDefault();
-								dispatch(getItemForm({ id: idList, value: !isCreated }));
-							}}></CiCircleRemove>
-					</button> */}
 					<input
-						// maxlength="16"
 						value={titleValue}
 						onChange={(event) => onHandler(event.target.value, idList)}
 						className={styles.imput}
@@ -49,14 +40,6 @@ function ItemForm({ idList }) {
 						placeholder="Add the task name and press 'Enter'"
 						onKeyDown={onKeyDown}
 					/>
-					{/* <button className={styles.button__wrapper}>
-						<IoCreateOutline
-							className={styles.buttonTwo}
-							onClick={(event) => {
-								event.preventDefault();
-								dispatch(createNewItem(idList));
-							}}></IoCreateOutline>
-					</button> */}
 				</div>
 			</form>
 		</div>

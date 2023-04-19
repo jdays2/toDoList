@@ -49,10 +49,14 @@ export const formSlice = createSlice({
 				const newItem = draft.tasks[action.payload].currentFormItemValue;
 				draft.tasks[action.payload].items.push({
 					value: newItem,
-					done: false,
 				});
 				draft.tasks[action.payload].currentFormItemValue = "";
 			});
+		},
+		changeItemValue(state, action) {
+			debugger;
+			state.tasks[action.payload.idList].items[action.payload.id] =
+				action.payload.value;
 		},
 		getForm(state, action) {
 			return produce(state, (draft) => {
@@ -76,18 +80,19 @@ export const formSlice = createSlice({
 				console.log(current(draft.tasks));
 			});
 		},
-		toggleReadiness(state, action) {
-			return produce(state, (draft) => {
-				draft.tasks[action.payload.idList].items[action.payload.id].done =
-					action.payload.done ? false : true;
-			});
-		},
+		// toggleReadiness(state, action) {
+		// 	return produce(state, (draft) => {
+		// 		draft.tasks[action.payload.idList].items[action.payload.id].done =
+		// 			action.payload.done ? false : true;
+		// 	});
+		// },
 	},
 });
 
 debugger;
 
 export const {
+	changeItemValue,
 	setCurrentFormTitleValue,
 	setCurrentFormItemValue,
 	createNewTask,

@@ -37,7 +37,7 @@ function TaskForm() {
 					></IoArrowUndoOutline> */}
 				{/* </button> */}
 				<input
-					maxlength="28"
+					maxLength="28"
 					value={titleValue}
 					onChange={(event) => onHandler(event)}
 					className={styles.imput}

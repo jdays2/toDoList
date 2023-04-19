@@ -1,7 +1,7 @@
 .task {
 	position: relative;
-	width: 280px;
-	min-height: 60px;
+	min-width: 280px;
+	/* min-height: 60px; */
 	background: white;
 	border-radius: 2px;
 	display: flex;
@@ -13,21 +13,23 @@
 	flex-wrap: wrap;
 	overflow: hidden;
 	border: 2px solid #4ec46800;
+	transition: 0.5s;
 }
 
 .task:last-child {
 	padding-bottom: 220px;
 }
 
-.task:hover {
-	border: 2px solid #4ec4688f;
-	transition: 0.6s;
+textarea {
+	background-color: transparent;
+	border: none;
 }
 
 .taskDone {
 	background: rgba(0, 0, 0, 0.421);
 	text-decoration: line-through;
 	transition: 0.2s;
+	z-index: 4;
 }
 
 .taskName {
@@ -38,20 +40,26 @@
 	line-height: 24px;
 	justify-content: center;
 	width: 90%;
-	overflow: hidden;
 	padding-left: 10px;
 	padding-right: 25px;
+	overflow-wrap: break-word;
+	word-break: break-all;
 
 	color: #000000;
+	resize: vertical;
+	width: 100%;
+	transition: 0.1s;
+	height: auto;
+	min-height: 60px;
+	max-height: 300px;
+	overflow: hidden;
+	padding: 10px;
+	padding-right: 48px;
+	box-sizing: border-box;
 }
 
-.done {
-	color: green;
-	width: 30px;
-	height: 34px;
-	position: absolute;
-	left: 10px;
-	top: 12px;
+.active {
+	border: 2px solid black;
 }
 
 .hidden {
@@ -64,12 +72,28 @@
 	top: 12px;
 }
 
+.edit_button {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 30px;
+	top: 8px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.edit_button:hover {
+	width: 22px;
+	height: 22px;
+	color: rgb(133, 133, 0);
+}
+
 .deleteElement {
 	position: absolute;
 	width: 18px;
 	height: 18px;
 	color: rgba(55, 55, 83, 0.692);
-	right: 15px;
+	top: 8px;
+	right: 6px;
 	transition: 0.5s;
 }
 

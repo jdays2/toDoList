@@ -3,28 +3,19 @@ import TaskList from "./components/TaskList/TaskList";
 import Header from "./components/Header/Header";
 
 import Form from "./components/Form/TaskForm";
-
-import { BsPlusSquareFill } from "react-icons/bs";
-import { getForm } from "./redux/slices/formSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { CgProfile } from "react-icons/cg";
+import { BsTelegram } from "react-icons/bs";
+import { SlSocialVkontakte } from "react-icons/sl";
+import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 function App() {
 	const tasks = useSelector((state) => state.form.tasks);
-	const dispatch = useDispatch();
-	const isCreated = useSelector((state) => state.form.isCreated);
-
 	return (
 		<div className="App">
-			<div class="wrapper">
+			<div className="wrapper">
 				<Header />
 				<Form />
-
-				<button
-					className={isCreated ? `tryMeButton` : `hidden`}
-					onClick={() => dispatch(getForm(false))}>
-					<span>"THE NEW LIFE ORDER"</span>
-					<BsPlusSquareFill className="addIcon" />
-				</button>
 
 				<div className="content__wrapper">
 					{tasks.map((e, i) => {
@@ -40,6 +31,23 @@ function App() {
 					})}
 				</div>
 			</div>
+			<footer className="footer">
+				<p>Made by: jdays2</p>
+				<div className="footer_link-list">
+					<a href="https://github.com/jdays2" target="_blank">
+						<AiFillGithub className="footer_link" />
+					</a>
+					<a href="https://vk.com/ostalosmalovremeni" target="_blank">
+						<SlSocialVkontakte className="footer_link" />
+					</a>
+					<a href="https://www.instagram.com/spiritpizza/" target="_blank">
+						<AiOutlineInstagram className="footer_link" />
+					</a>
+					<a href="https://t.me/Marchezko" target="_blank">
+						<BsTelegram className="footer_link" />
+					</a>
+				</div>
+			</footer>
 		</div>
 	);
 }
