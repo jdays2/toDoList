@@ -19,6 +19,7 @@ function TaskForm() {
 
 	const onKeyDown = (e) => {
 		if (e.keyCode === 13) {
+			e.preventDefault();
 			dispatch(createNewTask());
 		}
 	};

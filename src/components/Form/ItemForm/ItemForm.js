@@ -23,6 +23,7 @@ function ItemForm({ idList }) {
 
 	const onKeyDown = (e) => {
 		if (e.keyCode === 13) {
+			e.preventDefault();
 			dispatch(createNewItem(idList));
 		}
 	};
