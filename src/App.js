@@ -13,7 +13,7 @@ function App() {
 	const tasks = useSelector((state) => state.form.tasks);
 	return (
 		<div className="App">
-			<div class="wrapper">
+			<div className="wrapper">
 				<Header />
 				<Form />
 
