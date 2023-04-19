@@ -1,7 +1,7 @@
 .task {
 	position: relative;
-	width: 280px;
-	min-height: 60px;
+	min-width: 280px;
+	/* min-height: 60px; */
 	background: white;
 	border-radius: 2px;
 	display: flex;
@@ -13,6 +13,7 @@
 	flex-wrap: wrap;
 	overflow: hidden;
 	border: 2px solid #4ec46800;
+	transition: 0.5s;
 }
 
 .task:last-child {
@@ -38,11 +39,21 @@
 	line-height: 24px;
 	justify-content: center;
 	width: 90%;
-	overflow: hidden;
 	padding-left: 10px;
 	padding-right: 25px;
 
 	color: #000000;
+	resize: vertical;
+	width: 100%;
+	transition: 0.1s;
+	height: auto;
+	min-height: 60px;
+	max-height: 300px;
+	overflow: hidden;
+	padding: 10px;
+	/* padding-top: 15px; */
+	/* padding-bottom: 15px; */
+	box-sizing: border-box;
 }
 
 .done {

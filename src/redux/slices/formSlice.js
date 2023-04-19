@@ -54,6 +54,11 @@ export const formSlice = createSlice({
 				draft.tasks[action.payload].currentFormItemValue = "";
 			});
 		},
+		changeItemValue(state, action) {
+			debugger;
+			state.tasks[action.payload.idList].items[action.payload.id] =
+				action.payload.value;
+		},
 		getForm(state, action) {
 			return produce(state, (draft) => {
 				draft.isCreated = action.payload;
@@ -88,6 +93,7 @@ export const formSlice = createSlice({
 debugger;
 
 export const {
+	changeItemValue,
 	setCurrentFormTitleValue,
 	setCurrentFormItemValue,
 	createNewTask,
