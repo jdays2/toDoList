@@ -7,14 +7,28 @@
 	transition: 1s;
 }
 
+input {
+	border: none;
+}
+
+input:focus {
+	border-width: 0;
+	border-color: transparent;
+	outline: none;
+}
+
 .form {
+	border-radius: 8px;
+	overflow: hidden;
 	max-width: 600px;
+	height: 50px;
 	position: absolute;
 	top: 26%;
 	z-index: 2;
 
 	display: flex;
 	align-items: center;
+
 	/* margin: 10px; */
 	/* box-shadow: 0 0 10px rgb(255, 144, 249); */
 }
@@ -26,16 +40,40 @@
 	font-size: 24px;
 	opacity: 1;
 	transition: 0.4s;
-	border-radius: 8px;
 	/* margin: 10px; */
 	/* border: 3px solid rgba(#e98074 0.979); */
 	/* background: rgba(0, 0, 0, 0.322); */
 	color: black;
 }
 
+.form__button {
+	width: 30px;
+	height: 25px;
+	padding: 15px 5px;
+	color: white;
+	background-color: #2170746a;
+	cursor: pointer;
+}
+
+.form__button:active {
+	background-color: #217074;
+}
+
+input:focus + .form__button {
+	background-color: #217074e8;
+}
+
 @media (max-width: 650px) {
 	.imput {
 		max-width: 240px;
+		font-size: 16px;
+	}
+	.root {
+		top: 80px;
+	}
+	.form {
+		border-radius: 8px;
+		height: 40px;
 	}
 }
 

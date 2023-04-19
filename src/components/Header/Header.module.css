@@ -24,7 +24,7 @@ h1 {
 
 	font-family: "Caveat";
 	font-size: 54px;
-	color: rgba(0, 40, 20, 0.854);
+	color: #184b4e;
 }
 
 .home {
@@ -47,4 +47,10 @@ h1 {
 	width: 120px;
 	justify-content: space-between;
 	align-items: center;
+}
+
+@media (max-width: 650px) {
+	.header h1 {
+		font-size: 32px;
+	}
 }

@@ -5,9 +5,7 @@ import {
 	setCurrentFormTitleValue,
 	createNewTask,
 } from "../../redux/slices/formSlice";
-import { IoCreateOutline, IoArrowUndoOutline } from "react-icons/io5";
-
-import { getForm } from "../../redux/slices/formSlice";
+import { IoMdSend } from "react-icons/io";
 
 function TaskForm() {
 	const dispatch = useDispatch();
@@ -23,19 +21,13 @@ function TaskForm() {
 			dispatch(createNewTask());
 		}
 	};
+	const setList = () => {
+		dispatch(createNewTask());
+	};
 
 	return (
 		<div className={!isCreated ? styles.root : styles.hidden}>
 			<form className={styles.form}>
-				{/* <button className={styles.button__wrapper}> */}
-				{/* <IoArrowUndoOutline
-						className={styles.button}
-						// onClick={(event) => {
-						//   event.preventDefault();
-						//   dispatch(getForm(true));
-						// }}
-					></IoArrowUndoOutline> */}
-				{/* </button> */}
 				<input
 					maxLength="28"
 					value={titleValue}
@@ -45,14 +37,7 @@ function TaskForm() {
 					placeholder="Type a name and press 'Enter'"
 					onKeyDown={onKeyDown}
 				/>
-				{/* <button className={styles.button__wrapper}> */}
-				{/* <IoCreateOutline
-						className={styles.button}
-						onClick={(event) => {
-							event.preventDefault();
-							dispatch(createNewTask());
-						}}></IoCreateOutline> */}
-				{/* </button> */}
+				<IoMdSend className={styles.form__button} onClick={setList}></IoMdSend>
 			</form>
 		</div>
 	);

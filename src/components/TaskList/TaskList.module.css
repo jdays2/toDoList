@@ -60,3 +60,10 @@
 .deleteElement:hover {
 	color: rgba(173, 0, 9, 0.836);
 }
+
+@media (max-width: 650px) {
+	.item {
+		min-width: 220px;
+		max-width: 280px;
+	}
+}

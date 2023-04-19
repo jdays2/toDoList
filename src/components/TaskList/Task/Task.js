@@ -36,7 +36,13 @@ function Task({ value, idList, id }) {
 	return (
 		<div
 			className={done ? `${styles.task} ${styles.taskDone}` : `${styles.task}`}>
-			<CiEdit onClick={setRead} className={styles.edit_button}></CiEdit>
+			<CiEdit
+				onClick={setRead}
+				className={
+					justRead
+						? styles.edit_button
+						: `${styles.edit_button} ${styles.edit_button__active}`
+				}></CiEdit>
 			<textarea
 				className={
 					justRead ? styles.taskName : `${styles.taskName} ${styles.active}`
