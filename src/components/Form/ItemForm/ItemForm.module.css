@@ -2,10 +2,9 @@
 	position: relative;
 	bottom: 20px;
 	z-index: 3;
-	z-index: 1;
 
 	position: absolute;
-	width: 80%;
+	width: 85%;
 }
 
 .form {
