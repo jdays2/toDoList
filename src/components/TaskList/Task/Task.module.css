@@ -12,6 +12,7 @@
 	box-sizing: border-box;
 	flex-wrap: wrap;
 	overflow: hidden;
+	border: 2px solid #4ec46800;
 }
 
 .task:last-child {
@@ -35,9 +36,11 @@
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 24px;
-	margin: 0 auto;
 	justify-content: center;
-	margin-right: 25px;
+	width: 90%;
+	overflow: hidden;
+	padding-left: 10px;
+	padding-right: 25px;
 
 	color: #000000;
 }
